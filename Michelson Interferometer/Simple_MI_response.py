@@ -28,7 +28,8 @@ kat.parse("xaxis ETMx phi lin 0 180 200")
 out1=kat.run()
 
 
-kat.bs1.phi=45 
+
+""" kat.bs1.phi=45 
 out2 = kat.run()
 
 plt.figure()
@@ -37,5 +38,32 @@ plt.plot(out2.x,out2['pow_out'],label='dark fringe')
 plt.xlabel('ETMx tuning [deg]')
 plt.ylabel('power out [W]')
 plt.legend(loc=5)
+ """
 
+
+
+kat = base.deepcopy()
+
+kat.bs1.phi = 45
+
+kat.parse("""
+            pd pow_refl n2
+            xaxis ETMx phi lin 0 180 200
+""")
+##########commom diff ####################
+
+katC = kat.deepcopy()
+katC.parse("""
+put ETMy phi $x1
+""")
+out=katC.run()
+out.plot(title='common')
+
+######### differentail tuning###############
+katC = kat.deepcopy()
+katC.parse("""
+put ETMy phi $mx1
+""")
+out=katC.run()
+out.plot(title='differential')
 # %%
