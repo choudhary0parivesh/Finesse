@@ -15,7 +15,7 @@ basecode = """
                     
                     m PRM 1 0 0 n3 n4    #recycling mirror
                     
-                    bs bs1 0.5 0.5 0 0 n4 n5 n6 n7      #beam spplitter
+                    bs bs1 0.5 0.5 0 45 n4 n5 n6 n7      #beam spplitter
                     
                     ##########y arm########
                     s s2 1 n5 n6         #cavity between BS and input RM
