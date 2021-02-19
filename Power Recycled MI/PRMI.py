@@ -11,7 +11,7 @@ base.verbose = False
 basecode = """
                     l laser1 1.0 0 n1    #laser 1 watt
                     s s1 0 n1 n2         #cavity between laser and modulator
-                    s s_mod n2 n3      # change modulator parameters
+                    s s_mod n2 n3        # change modulator parameters
                     
                     m PRM 1 0 0 n3 n4    #recycling mirror
                     
